@@ -263,14 +263,9 @@ class SebraTrainer(BaseTrainer):
                 image_ = torch.cat((image, image_pos))
                 feature_ref = self.classifier(image_)
                 output = self.classifier_head(feature_ref)
-                if self.args.userank:
-                    contrast_rank = [image_rank, pos_rank, self.max_rank, self.min_rank]
-                else:
-                    contrast_rank = None
                 contrastive_loss = contrastive_loss_criterion.forward(feature_ref[:int(image_.shape[0] / 2)],
                                                               features_pos.detach(),
                                                               features_neg.detach(),
-                                                              ranks=contrast_rank,
                                                               )
 
                 classifier_loss = criterion(output[int(image_.shape[0] / 2):], obj_gt)
