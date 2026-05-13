@@ -27,5 +27,4 @@ PYTHONPATH=.:$PYTHONPATH python trainers/launcher.py \
     --optimizer adam \
     --lr2 1e-4 \
     --weight_decay2 0 \
-    --temperature 0.15 \
-    --control 4
+    --temperature 0.15
