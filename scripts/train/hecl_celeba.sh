@@ -5,7 +5,7 @@
 method_name=hecl
 bias_id_epoch=1
 
-PYTHONPATH=.:$PYTHONPATH python urbancars_trainers/launcher.py \
+PYTHONPATH=.:$PYTHONPATH python trainers/launcher.py \
     --method ${method_name} \
     --dataset celeba \
     --amp \
