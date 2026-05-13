@@ -125,7 +125,6 @@ def parse_args():
     parser.add_argument('--classifier_weight', type=float, default=0.5, help="coefficent of classifier loss")
 
     parser.add_argument("--batch_size_stage2", default=64, type=int)
-    parser.add_argument("--userank", action="store_true")
 
     parser.add_argument("--lr_decay", default=None, choices=[None, "multistep", "cosine_annealing"])
     parser.add_argument("--decay_epoch", default=[40,80])
